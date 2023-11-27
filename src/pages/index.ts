@@ -1,0 +1,8 @@
+export { default as HomePage } from './HomePage'
+export { default as DashboardLayout } from './DashboardLayout'
+export { default as Dashboard } from './Dashboard'
+export { default as SchedulePage } from './SchedulePage'
+export { default as CoursesPage } from './CoursesPage'
+export { default as GradebookPage } from './GradebookPage'
+export { default as PerformancePage } from './PerformancePage'
+export { default as AnnouncementPage } from './AnnouncementPage'
