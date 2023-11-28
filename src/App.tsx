@@ -9,8 +9,13 @@ import {
   PerformancePage,
   AnnouncementPage,
 } from './pages/index'
-
+import { useDispatch } from 'react-redux'
+import { login } from './features/Login/loginSlice'
 const App = () => {
+  const dispatch = useDispatch()
+  if (sessionStorage.getItem('login') === 'true') {
+    dispatch(login())
+  }
   const router = createBrowserRouter([
     {
       path: '/',
