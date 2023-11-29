@@ -4,7 +4,9 @@ import QuizItem from './QuizItem'
 import { RootState } from '../store'
 
 const Quizes = () => {
-  const { quizesData } = useSelector((store: RootState) => store.quizes)
+  const { quizesData, isLoading } = useSelector(
+    (store: RootState) => store.quizes
+  )
 
   return (
     <div className="grid gap-4 bg-gray-200 col-span-1 ">
@@ -13,28 +15,32 @@ const Quizes = () => {
           <h3 className=" font-bold">What's due?</h3>
           <AllButton />
         </header>
-        <ul className="">
-          {quizesData.map((item, index) => {
-            if (index === quizesData.length - 1) {
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <ul className="">
+            {quizesData.map((item, index) => {
+              if (index === quizesData.length - 1) {
+                return (
+                  <QuizItem
+                    key={item._id}
+                    {...item}
+                    due_date={new Date(item.due_date)}
+                    last={true}
+                  />
+                )
+              }
               return (
                 <QuizItem
                   key={item._id}
                   {...item}
                   due_date={new Date(item.due_date)}
-                  last={true}
+                  last={false}
                 />
               )
-            }
-            return (
-              <QuizItem
-                key={item._id}
-                {...item}
-                due_date={new Date(item.due_date)}
-                last={false}
-              />
-            )
-          })}
-        </ul>
+            })}
+          </ul>
+        )}
       </div>
     </div>
   )
