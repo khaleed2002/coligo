@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .sidebar-icon {
+        @apply w-6 h-6;
+    }
+
+    .nav-link {
+        @apply hover:bg-white hover:text-teal-600 p-4 flex gap-4 duration-300;
+    }
+
+    .nav-link.active {
+        @apply bg-white text-cyan-700;
+
+    }
+
+    .nav-link.active:hover {
+        background-color: white;
+    }
+
+    .exam-time {
+        @apply bg-gradient-to-r from-cyan-700 to-cyan-200 inline-block text-transparent bg-clip-text;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}

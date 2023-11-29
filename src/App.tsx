@@ -30,7 +30,7 @@ const App = () => {
           element: <Dashboard />,
         },
         {
-          path: 'courses',
+          path: 'schedule',
           element: <SchedulePage />,
         },
         {
