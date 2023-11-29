@@ -18,7 +18,7 @@ const initialState: {
   error: '',
 }
 
-const QuizesURL = 'http://localhost:3001/api/quizzes'
+const QuizesURL = 'https://coligo.cyclic.app/api/quizzes'
 
 export const getAllQuizes = createAsyncThunk(
   'quizes/getAllQuizes',

@@ -17,7 +17,7 @@ const initialState: {
   error: '',
 }
 
-const announcementURL = 'http://localhost:3001/api/announcements'
+const announcementURL = 'https://coligo.cyclic.app/api/announcements'
 
 export const getAllAnnouncements = createAsyncThunk(
   'announcement/getAllAnnouncements',
